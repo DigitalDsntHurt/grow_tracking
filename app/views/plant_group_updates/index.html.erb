@@ -8,9 +8,9 @@
       <th>Plant group</th>
       <th>Update type</th>
       <th>Quantity</th>
+      <th>Current room</th>
       <th>Transplant origin room</th>
       <th>Transplant destination room</th>
-      <th>Current room</th>
       <th>Notes</th>
       <th colspan="3"></th>
     </tr>
@@ -22,9 +22,9 @@
         <td><%= plant_group_update.plant_group_id %></td>
         <td><%= plant_group_update.update_type %></td>
         <td><%= plant_group_update.quantity %></td>
+        <td><%= Room.where(id: plant_group_update.current_room_id)[0].name %></td>
         <td><%= plant_group_update.transplant_origin_room_id %></td>
         <td><%= plant_group_update.transplant_destination_room_id %></td>
-        <td><%= plant_group_update.current_room_id %></td>
         <td><%= plant_group_update.notes %></td>
         <td><%= link_to 'Show', plant_group_update %></td>
         <td><%= link_to 'Edit', edit_plant_group_update_path(plant_group_update) %></td>

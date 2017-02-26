@@ -7,7 +7,8 @@
     <tr>
       <th>Quantity</th>
       <th>Nickname</th>
-      <th>Clone date</th>
+      <th>CloneDate</th>
+      <th>CurrentRoom</th>
       <th>Notes</th>
       <th colspan="3"></th>
     </tr>
@@ -19,6 +20,7 @@
         <td><%= plant_group.quantity %></td>
         <td><%= plant_group.nickname %></td>
         <td><%= plant_group.clone_date %></td>
+        <td><%= @rooms.where(id: plant_group.current_room_id)[0].name %></td>
         <td><%= plant_group.notes %></td>
         <td><%= link_to 'Show', plant_group %></td>
         <td><%= link_to 'Edit', edit_plant_group_path(plant_group) %></td>

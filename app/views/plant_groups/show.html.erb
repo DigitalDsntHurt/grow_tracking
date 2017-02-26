@@ -1,24 +1,51 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Quantity:</strong>
-  <%= @plant_group.quantity %>
-</p>
 
-<p>
-  <strong>Nickname:</strong>
-  <%= @plant_group.nickname %>
-</p>
 
-<p>
-  <strong>Clone_date:</strong>
-  <%= @plant_group.clone_date %>
-</p>
+<table>
+  <tr>
+    <td style="border-right-width: 1px; border-right-style: solid">
+      <p align="center"><strong>Overview</strong></p>
+      <p>
+        <strong>Quantity:</strong>
+        <%= @plant_group.quantity %>
+      </p>
 
-<p>
-  <strong>Notes:</strong>
-  <%= @plant_group.notes %>
-</p>
+      <p>
+        <strong>Nickname:</strong>
+        <%= @plant_group.nickname %>
+      </p>
+
+      <p>
+        <strong>Current Room:</strong>
+        <%= @rooms.where(id: @plant_group.current_room_id)[0].name %>
+      </p>
+
+      <p>
+        <strong>Clone_date:</strong>
+        <%= @plant_group.clone_date %>
+      </p>
+
+      <p>
+        <strong>Notes:</strong>
+        <%= @plant_group.notes %>
+      </p>
+    </td>
+    <td>
+    <ul>
+      <% @plant_group.plant_group_updates.each{|pgu| %>
+        <li>
+          <%= pgu.update_type %>, <%= pgu.quantity %>, <%= pgu.updated_at %>
+        </li>
+      <% } %>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+
+
+
 
 <%= link_to 'Edit', edit_plant_group_path(@plant_group) %> |
 <%= link_to 'Back', plant_groups_path %>

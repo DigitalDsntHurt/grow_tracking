@@ -5,11 +5,13 @@ class PlantGroupsController < ApplicationController
   # GET /plant_groups.json
   def index
     @plant_groups = PlantGroup.all
+    @rooms = Room.all
   end
 
   # GET /plant_groups/1
   # GET /plant_groups/1.json
   def show
+    @rooms = Room.all
   end
 
   # GET /plant_groups/new
@@ -69,6 +71,6 @@ class PlantGroupsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def plant_group_params
-      params.require(:plant_group).permit(:nickname, :quantity, :clone_date, :notes)
+      params.require(:plant_group).permit(:nickname, :quantity, :clone_date, :current_room_id, :notes)
     end
 end
