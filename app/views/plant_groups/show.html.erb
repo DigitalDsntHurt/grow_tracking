@@ -30,8 +30,15 @@
         <strong>Notes:</strong>
         <%= @plant_group.notes %>
       </p>
+
+      <p>
+      <hr>
+      <%= link_to 'Edit', edit_plant_group_path(@plant_group) %> |
+<%= link_to 'Back', plant_groups_path %>
+      </p>
     </td>
     <td>
+    <p align="center"><strong>Updates</strong></p>
     <ul>
       <% @plant_group.plant_group_updates.each{|pgu| %>
         <li>
@@ -39,13 +46,12 @@
         </li>
       <% } %>
       </ul>
+      <p align="center">
+      <hr>
+        <a href="/">Transplant to Veg</a> |
+        <a href="/">Transplant to Flower</a> |
+        <a href="/">Flip</a>
+      </p>
     </td>
   </tr>
 </table>
-
-
-
-
-
-<%= link_to 'Edit', edit_plant_group_path(@plant_group) %> |
-<%= link_to 'Back', plant_groups_path %>

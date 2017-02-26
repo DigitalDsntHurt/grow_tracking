@@ -1,0 +1,13 @@
+<h1>Your Pipeline</h1><br>
+
+
+<table width="100%">
+	<% @rooms.each{|room| %>
+		<tr>
+			<td>
+				<h1><%= room.name %></h1>
+				<hr>
+			</td>
+		</tr>
+	<% } %>
+</table>
