@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @plant_group.quantity %>
+</p>
+
+<p>
+  <strong>Clone date:</strong>
+  <%= @plant_group.clone_date %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @plant_group.notes %>
+</p>
+
+<%= link_to 'Edit', edit_plant_group_path(@plant_group) %> |
+<%= link_to 'Back', plant_groups_path %>

@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Plant group:</strong>
+  <%= @plant_group_update.plant_group_id %>
+</p>
+
+<p>
+  <strong>Update type:</strong>
+  <%= @plant_group_update.update_type %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @plant_group_update.quantity %>
+</p>
+
+<p>
+  <strong>Transplant origin room:</strong>
+  <%= @plant_group_update.transplant_origin_room_id %>
+</p>
+
+<p>
+  <strong>Transplant destination room:</strong>
+  <%= @plant_group_update.transplant_destination_room_id %>
+</p>
+
+<p>
+  <strong>Current room:</strong>
+  <%= @plant_group_update.current_room_id %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @plant_group_update.notes %>
+</p>
+
+<%= link_to 'Edit', edit_plant_group_update_path(@plant_group_update) %> |
+<%= link_to 'Back', plant_group_updates_path %>

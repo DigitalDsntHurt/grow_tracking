@@ -1,0 +1,32 @@
+<%= form_for(plant_group) do |f| %>
+  <% if plant_group.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(plant_group.errors.count, "error") %> prohibited this plant_group from being saved:</h2>
+
+      <ul>
+      <% plant_group.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :quantity %>
+    <%= f.text_field :quantity %>
+  </div>
+
+  <div class="field">
+    <%= f.label :clone_date %>
+    <%= f.text_field :clone_date %>
+  </div>
+
+  <div class="field">
+    <%= f.label :notes %>
+    <%= f.text_field :notes %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

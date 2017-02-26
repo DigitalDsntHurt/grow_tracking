@@ -1,0 +1,52 @@
+<%= form_for(plant_group_update) do |f| %>
+  <% if plant_group_update.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(plant_group_update.errors.count, "error") %> prohibited this plant_group_update from being saved:</h2>
+
+      <ul>
+      <% plant_group_update.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :plant_group_id %>
+    <%= f.text_field :plant_group_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :update_type %>
+    <%= f.text_field :update_type %>
+  </div>
+
+  <div class="field">
+    <%= f.label :quantity %>
+    <%= f.text_field :quantity %>
+  </div>
+
+  <div class="field">
+    <%= f.label :transplant_origin_room_id %>
+    <%= f.text_field :transplant_origin_room_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :transplant_destination_room_id %>
+    <%= f.text_field :transplant_destination_room_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :current_room_id %>
+    <%= f.text_field :current_room_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :notes %>
+    <%= f.text_field :notes %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

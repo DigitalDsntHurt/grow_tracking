@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  plant_group_id: MyString
+  update_type: MyString
+  quantity: MyString
+  transplant_origin_room_id: MyString
+  transplant_destination_room_id: MyString
+  current_room_id: MyString
+  notes: MyString
+
+two:
+  plant_group_id: MyString
+  update_type: MyString
+  quantity: MyString
+  transplant_origin_room_id: MyString
+  transplant_destination_room_id: MyString
+  current_room_id: MyString
+  notes: MyString
