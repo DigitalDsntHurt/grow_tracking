@@ -69,6 +69,6 @@ class PlantGroupsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def plant_group_params
-      params.require(:plant_group).permit(:quantity, :clone_date, :notes)
+      params.require(:plant_group).permit(:nickname, :quantity, :clone_date, :notes)
     end
 end
