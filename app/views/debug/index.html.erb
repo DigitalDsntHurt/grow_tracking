@@ -1,0 +1,54 @@
+<h1>Debug</h1>
+
+<br>
+	<hr width="95%">
+<br>
+
+<table align="center" width="75%">
+	<tr>
+		<td style="border-bottom:solid;">
+			<br>&nbsp;
+			<strong><u><%= @rooms.all.count %></u></strong> Current <strong>Rooms</strong> in pipeline
+			<br>
+			Column Names:
+			<%= @rooms.column_names.join(", ") %>
+			<br>&nbsp;
+		</td>
+	</tr>
+	<tr>
+		<td style="border-bottom:solid;">
+			<br>&nbsp;
+			<strong><u><%= @plant_groups.all.count %></u></strong> Current <strong>Plant Groups</strong> in pipeline
+			<br>
+			Column Names:
+			<%= @plant_groups.column_names.join(", ") %>
+			<br>&nbsp;
+		</td>
+	</tr>
+	<tr>
+		<td style="border-bottom:solid;">
+			<br>&nbsp;
+			<strong><u><%= @plant_group_updates.all.count %></u></strong> Current <strong>Plant Group Updates</strong> in pipeline
+			<br>
+			Column Names:
+			<%= @plant_group_updates.column_names.join(", ") %>
+			<br>&nbsp;
+		</td>
+	</tr>
+	<tr>
+		<td style="border-bottom:solid;">
+		</td>
+	</tr>
+	<tr>
+		<td style="border-bottom:solid;">
+		</td>
+	</tr>
+</table>
+
+<br>
+<br>
+<br>
+
+<br>
+	<hr width="95%">
+<br>

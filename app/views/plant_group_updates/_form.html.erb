@@ -13,12 +13,12 @@
 
   <div class="field">
     <%= f.label :plant_group_id %>
-    <%= f.text_field :plant_group_id %>
+    <%= f.collection_select :plant_group_id, PlantGroup.order(:created_at),:id,:nickname %>
   </div>
 
   <div class="field">
     <%= f.label :update_type %>
-    <%= f.text_field :update_type %>
+    <%= f.select :update_type, options_for_select(["clone","transplant","flip","harvest"]), include_blank: true %>
   </div>
 
   <div class="field">
@@ -27,18 +27,13 @@
   </div>
 
   <div class="field">
-    <%= f.label :current_room_id %>
-    <%= f.text_field :current_room_id %>
-  </div>
-
-  <div class="field">
     <%= f.label :transplant_origin_room_id %>
-    <%= f.text_field :transplant_origin_room_id %>
+    <%= f.collection_select :transplant_origin_room_id, Room.order(:created_at),:id,:name %>
   </div>
 
   <div class="field">
     <%= f.label :transplant_destination_room_id %>
-    <%= f.text_field :transplant_destination_room_id %>
+    <%= f.collection_select :transplant_destination_room_id, Room.order(:created_at),:id,:name %>
   </div>
 
   <div class="field">

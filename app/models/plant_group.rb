@@ -2,8 +2,9 @@ class PlantGroup < ApplicationRecord
 	has_many :plant_group_updates, dependent: :destroy
 
 	validates :quantity, :nickname, :current_room_id, :clone_date, presence: true
-
 	after_create :create_clone_update
+
+
 
 	private
 	def create_clone_update
