@@ -4,4 +4,8 @@ class DebugController < ApplicationController
   	@plant_groups = PlantGroup.all
   	@plant_group_updates = PlantGroupUpdate.all
   end
+
+  def search
+  end
+  
 end

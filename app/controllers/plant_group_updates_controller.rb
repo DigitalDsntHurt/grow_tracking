@@ -61,6 +61,15 @@ class PlantGroupUpdatesController < ApplicationController
     end
   end
 
+  def transplant
+#    @plant_group = PlantGroup.find(params[:id])
+#    if @plant_group.update(plant_group_params)
+#      redirect_to(@plant_group)
+#    else
+#     render "plant_group_updates/transplant"
+#    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_plant_group_update

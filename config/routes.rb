@@ -10,4 +10,5 @@ Rails.application.routes.draw do
 
   get 'debug/index'
   get 'debug' => 'debug#index'
+  get 'debug/search'
 end
