@@ -6,7 +6,6 @@ class CreatePlantGroupUpdates < ActiveRecord::Migration[5.0]
       t.integer :quantity
       t.integer :transplant_origin_room_id
       t.integer :transplant_destination_room_id
-      t.integer :current_room_id
       t.string :notes
 
       t.timestamps

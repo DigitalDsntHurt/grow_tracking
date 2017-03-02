@@ -22,14 +22,16 @@
         <td><%= plant_group.clone_date %></td>
         <td><%= @rooms.where(id: plant_group.current_room_id)[0].name %></td>
         <td><%= plant_group.notes %></td>
-        <td><%= link_to 'Transplant' %> &nbsp; </td>
-        <td><%= link_to 'Flip', plant_group %> &nbsp; </td>
+        <td><%= link_to 'Transplant', plant_group_updates_transplant_path(:controller => "plant_group_updates", :action => "transplant", :group => plant_group.id) %> &nbsp; </td>
+        <td><%= link_to 'Flip', plant_group_updates_flip_path(:controller => "plant_group_updates", :action => "flip", :group => plant_group.id) %> &nbsp; </td>
         <td><%= link_to 'Harvest', plant_group %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
+<br>
+  <hr>
 <br>
 
 <%= link_to 'New Plant Group', new_plant_group_path %>

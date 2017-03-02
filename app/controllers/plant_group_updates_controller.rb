@@ -15,6 +15,8 @@ class PlantGroupUpdatesController < ApplicationController
   # GET /plant_group_updates/new
   def new
     @plant_group_update = PlantGroupUpdate.new
+    #@plant_group_update = PlantGroupUpdate.new(params[:plant_group_update])
+    #@plant_group = PlantGroup.find(params[:plant_group_id])
   end
 
   # GET /plant_group_updates/1/edit
@@ -35,6 +37,10 @@ class PlantGroupUpdatesController < ApplicationController
         format.json { render json: @plant_group_update.errors, status: :unprocessable_entity }
       end
     end
+
+#  @plant_group_update = PlantGroupUpdate.new(params[:plant_group_update])
+#  @plant_group_update.plant_group = PlantGroup.find(params[:project_id])
+#  @plant_group_update.save
   end
 
   # PATCH/PUT /plant_group_updates/1
@@ -61,13 +67,23 @@ class PlantGroupUpdatesController < ApplicationController
     end
   end
 
-  def transplant
+#  def transplant
 #    @plant_group = PlantGroup.find(params[:id])
 #    if @plant_group.update(plant_group_params)
 #      redirect_to(@plant_group)
 #    else
 #     render "plant_group_updates/transplant"
 #    end
+#  end
+
+  def transplant
+    @plant_group = PlantGroup.find(params[:group])
+    @new_plant_group_update = PlantGroupUpdate.new
+  end
+
+  def flip
+    @plant_group = PlantGroup.find(params[:group])
+    @new_plant_group_update = PlantGroupUpdate.new
   end
 
   private
@@ -80,4 +96,8 @@ class PlantGroupUpdatesController < ApplicationController
     def plant_group_update_params
       params.require(:plant_group_update).permit(:plant_group_id, :update_type, :quantity, :transplant_origin_room_id, :transplant_destination_room_id, :current_room_id, :notes)
     end
+
+#    def set_plant_group
+#      @plant_group = PlantGroup.find(params[:group])
+#    end
 end

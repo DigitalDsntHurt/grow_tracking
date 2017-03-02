@@ -21,7 +21,6 @@ ActiveRecord::Schema.define(version: 20170226001450) do
     t.integer  "quantity"
     t.integer  "transplant_origin_room_id"
     t.integer  "transplant_destination_room_id"
-    t.integer  "current_room_id"
     t.string   "notes"
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false

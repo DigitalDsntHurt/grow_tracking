@@ -1,0 +1,64 @@
+
+<%= form_for(@new_plant_group_update) do |f| %>
+  <% if @new_plant_group_update.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@new_plant_group_update.errors.count, "error") %> prohibited this @new_plant_group_update from being saved:</h2>
+
+      <ul>
+      <% @new_plant_group_update.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <table>
+    <tr>
+      <td>
+        <div class="field">
+          <%= f.label :update_type %>
+          <%= f.select :update_type, options_for_select(["clone","transplant","flip","harvest"], :selected => "transplant") %>
+        </div>        
+      </td>
+      <td>
+        <div class="field">
+          <%= f.label :plant_group_id %>
+          <%= f.collection_select :plant_group_id, PlantGroup.order(:created_at),:id,:nickname, :selected => @plant_group.id %>
+        </div>
+      </td>
+      <td>
+        <div class="field">
+          <%= f.label :transplant_origin_room_id %>
+          <%= f.collection_select :transplant_origin_room_id, Room.order(:created_at),:id,:name, :selected => @plant_group.current_room_id %>
+        </div>
+      </td>
+    </tr>
+  </table>
+
+  <table>
+    <tr>
+      <td>
+        <div class="field">
+          <%= f.label :quantity %>
+          <%= f.text_field :quantity, :value => @plant_group.quantity %>
+        </div>
+      </td>
+      <td>
+      <div class="field">
+          <%= f.label :transplant_destination_room_id %>
+          <%= f.collection_select :transplant_destination_room_id, Room.order(:created_at),:id,:name, include_blank: true %>
+        </div>
+      </td>
+      <td>
+        <div class="field">
+          <%= f.label :notes %>
+          <%= f.text_field :notes %>
+        </div>
+      </td>
+    </tr>
+  </table>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
