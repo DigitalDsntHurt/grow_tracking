@@ -8,6 +8,6 @@ class PlantGroup < ApplicationRecord
 
 	private
 	def create_clone_update
-		PlantGroupUpdate.create!(plant_group: self, update_type: "clone", quantity: self.quantity, current_room_id: self.current_room_id)
+		PlantGroupUpdate.create!(plant_group: self, update_type: "clone", quantity: self.quantity, transplant_destination_room_id: self.current_room_id, transplant_origin_room_id: self.current_room_id)
 	end
 end

@@ -94,7 +94,7 @@ class PlantGroupUpdatesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def plant_group_update_params
-      params.require(:plant_group_update).permit(:plant_group_id, :update_type, :quantity, :transplant_origin_room_id, :transplant_destination_room_id, :current_room_id, :notes)
+      params.require(:plant_group_update).permit(:plant_group_id, :update_type, :quantity, :transplant_origin_room_id, :transplant_destination_room_id, :notes)
     end
 
 #    def set_plant_group
