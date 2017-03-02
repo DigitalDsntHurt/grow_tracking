@@ -18,16 +18,13 @@
     <% @plant_groups.each do |plant_group| %>
       <tr>
         <td><%= plant_group.quantity %></td>
-        <td><%= plant_group.nickname %></td>
+        <td><%= link_to plant_group.nickname, plant_group %></td>
         <td><%= plant_group.clone_date %></td>
         <td><%= @rooms.where(id: plant_group.current_room_id)[0].name %></td>
         <td><%= plant_group.notes %></td>
-        <td><%= link_to 'Show', plant_group %></td>
-        <td><%= link_to 'Transplant' %></td>
-        <td><%= link_to 'Flip', plant_group %></td>
+        <td><%= link_to 'Transplant' %> &nbsp; </td>
+        <td><%= link_to 'Flip', plant_group %> &nbsp; </td>
         <td><%= link_to 'Harvest', plant_group %></td>
-        <td><%= link_to 'Edit', edit_plant_group_path(plant_group) %></td>
-        <td><%= link_to 'Destroy', plant_group, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

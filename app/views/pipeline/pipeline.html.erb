@@ -6,7 +6,7 @@
 		<tr>
 			<td>
 				<h1><%= room.name %></h1>				
-				<% @plant_groups.where(id: room.id).each {|pg| %>
+				<% @plant_groups.where(current_room_id: room.id).each {|pg| %>
 					<ul>
 						<li><%= pg.nickname %> &nbsp;|&nbsp; <%= pg.clone_date %> &nbsp;|&nbsp; <%= pg.notes %></li>
 					</ul>
