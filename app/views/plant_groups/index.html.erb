@@ -25,6 +25,7 @@
         <td><%= link_to 'Transplant', plant_group_updates_transplant_path(:controller => "plant_group_updates", :action => "transplant", :group => plant_group.id) %> &nbsp; </td>
         <td><%= link_to 'Flip', plant_group_updates_flip_path(:controller => "plant_group_updates", :action => "flip", :group => plant_group.id) %> &nbsp; </td>
         <td><%= link_to 'Harvest', plant_group %></td>
+        <td><%= link_to 'Destroy', plant_group, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
