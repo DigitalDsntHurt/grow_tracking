@@ -17,7 +17,7 @@
       <td>
         <div class="field">
           <%= f.label :update_type %>
-          <%= f.select :update_type, options_for_select(["clone","transplant","flip","harvest"], :selected => "transplant") %>
+          <%= f.select :update_type, options_for_select(["clone","transplant to veg","transplant to flower","flip","harvest"], :selected => "transplant to flower") %>
         </div>        
       </td>
       <td>
@@ -35,18 +35,26 @@
     </tr>
   </table>
 
+<hr>
+
   <table>
     <tr>
       <td>
         <div class="field">
-          <%= f.label :quantity %>
-          <%= f.text_field :quantity, :value => @plant_group.quantity %>
+          <%= f.label :date %>
+          <%= f.date_field :date_created, :value => Date.today %>
         </div>
       </td>
       <td>
       <div class="field">
-          <%= f.label :transplant_destination_room_id %>
+          <%= f.label :destination_room %>
           <%= f.collection_select :transplant_destination_room_id, Room.order(:created_at),:id,:name, include_blank: true %>
+        </div>
+      </td>
+      <td>
+        <div class="field">
+          <%= f.label :quantity %>
+          <%= f.text_field :quantity, :value => @plant_group.quantity %>
         </div>
       </td>
       <td>

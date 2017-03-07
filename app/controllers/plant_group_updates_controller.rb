@@ -76,7 +76,12 @@ class PlantGroupUpdatesController < ApplicationController
 #    end
 #  end
 
-  def transplant
+  def transplant_to_veg
+    @plant_group = PlantGroup.find(params[:group])
+    @new_plant_group_update = PlantGroupUpdate.new
+  end
+
+  def transplant_to_flower
     @plant_group = PlantGroup.find(params[:group])
     @new_plant_group_update = PlantGroupUpdate.new
   end
@@ -94,7 +99,7 @@ class PlantGroupUpdatesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def plant_group_update_params
-      params.require(:plant_group_update).permit(:plant_group_id, :update_type, :quantity, :transplant_origin_room_id, :transplant_destination_room_id, :notes)
+      params.require(:plant_group_update).permit(:plant_group_id, :update_type, :quantity, :transplant_origin_room_id, :transplant_destination_room_id, :notes, :pot_size)
     end
 
 #    def set_plant_group

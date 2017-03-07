@@ -11,32 +11,37 @@
   </head>
 
   <body>
+
+<!-- BEGIN NAV -->
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="/pipeline">Pipeline</a></li>
+        <li><a href="/plant_groups">PlantGroups</a></li>
+        <li><a href="/plant_group_updates">PlantGroupUpdates</a></li>
+        <li><a href="/debug">Debug</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<br><br><br><br>
+<!-- END NAV -->
+
+
+<!-- BEGIN BODY CONTAINER -->
+<div id="main-container" class="container-fluid">
+  <div class="row">
+    <div class="container">
+      
+      <!--  main content -->
+      <%= yield %>
+
+    </div>
+  </div>
+</div>
+<!-- END BODY CONTAINER -->
   
-  <div class="header-nav">
-  			<table>
-  			<tr>
-  				<td>
-            <a style="color:gray; text-decoration: none;" href="/pipeline"> 
-  					&nbsp;<img src="/images/root_nodes.png" width="20">&nbsp;
-            </a>
-  				</td>
-          <td>
-            <a style="color:gray;text-decoration: none;"style="color:white;" href="/rooms">Rooms &nbsp; </a>  
-          </td>
-  				<td>
-  					<a style="color:gray;text-decoration: none;" href="/plant_groups">PlantGroups &nbsp; </a>
-  				</td>
-          <td>
-            <a style="color:gray;text-decoration: none;" href="/debug">Debug &nbsp; </a>
-          </td>
-  			</tr>
-  			</table>
-  </header-nav>
-
-<br>
-<br>
-
-  <%= yield %>
   
   </body>
 

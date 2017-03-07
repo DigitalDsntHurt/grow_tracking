@@ -52,11 +52,3 @@
 <br>
 	<hr width="95%">
 <br>
-
-
-<%= form_tag({controller: "debug", action: "search"}, method: "get", class: "nifty_form") do %>
-  <%= label_tag(:q, "Search for:") %>
-  <%= text_field_tag(:q) %>
-  <%= submit_tag("Search") %>
-<% end %>
-
