@@ -20,6 +20,27 @@
     <td><%= pg.notes %></td>
     <td><%= pg.created_at.hour %>:<%= pg.created_at.min %> -- <%= pg.created_at.month %>/<%= pg.created_at.day %>/<%= pg.created_at.year %></td>
     <td><%= pg.updated_at.hour %>:<%= pg.updated_at.min %>  -- <%= pg.updated_at.month %>/<%= pg.updated_at.day %>/<%= pg.updated_at.year %></td>
+    <td>
+      <div class="dropdown" style="margin:6px;">
+        <button class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown">Update <%= pg.nickname %> PlantGroup
+        <span class="caret"></span></button>
+        <ul class="dropdown-menu">
+          <li>
+            <%= link_to 'Transplant to Veg', plant_group_updates_transplant_to_veg_path(:controller => "pg_updates", :action => "transplant_to_veg", :group => pg.id) %>
+          </li>
+          <li>
+            <%= link_to 'Transplant to Flower', plant_group_updates_transplant_to_flower_path(:controller => "pg_updates", :action => "transplant_to_flower", :group => pg.id) %>
+          </li>
+          <li><%= link_to 'Flip', plant_group_updates_flip_path(:controller => "pg_updates", :action => "flip", :group => pg.id) %></li>
+          <li>
+            <%= link_to 'Harvest', pg %>
+          </li>
+          <li>
+            <%= link_to 'Destroy', pg, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </li>
+        </ul>
+      </div>      
+    </td>
   </tr>
   <% } %>
 </table>
