@@ -2,6 +2,43 @@
 
 <h1>Plant Groups</h1>
 
+<hr>
+
+<table width="100%">
+  <tr>
+    <% @plant_groups.column_names.each{|columnhead| %>
+      <th><%= columnhead %></th>
+    <% } %>
+  </tr>
+  <% @plant_groups.each{|pg| %>
+  <tr>
+    <td><%= pg.id %></td>
+    <td><%= pg.nickname %></td>
+    <td><%= pg.quantity %></td>
+    <td><%= pg.clone_date %></td>
+    <td><%= pg.current_room_id %></td>
+    <td><%= pg.notes %></td>
+    <td><%= pg.created_at.hour %>:<%= pg.created_at.min %> -- <%= pg.created_at.month %>/<%= pg.created_at.day %>/<%= pg.created_at.year %></td>
+    <td><%= pg.updated_at.hour %>:<%= pg.updated_at.min %>  -- <%= pg.updated_at.month %>/<%= pg.updated_at.day %>/<%= pg.updated_at.year %></td>
+  </tr>
+  <% } %>
+</table>
+
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<p align="center"><i>ignore below</i></p>
+<hr>
 <table width="100%">
   <tr>
       <th>Nickname</th>
@@ -23,27 +60,4 @@
     <td></td>
     <td></td>
   </tr>
-</table>
-
-<hr>
-
-
-<table width="100%">
-  <tr>
-    <% @plant_groups.column_names.each{|columnhead| %>
-      <th><%= columnhead %></th>
-    <% } %>
-  </tr>
-  <% @plant_groups.each{|pg| %>
-  <tr>
-    <td><%= pg.id %></td>
-    <td><%= pg.nickname %></td>
-    <td><%= pg.quantity %></td>
-    <td><%= pg.clone_date %></td>
-    <td><%= pg.current_room_id %></td>
-    <td><%= pg.notes %></td>
-    <td><%= pg.created_at.hour %>:<%= pg.created_at.min %> -- <%= pg.created_at.month %>/<%= pg.created_at.day %>/<%= pg.created_at.year %></td>
-    <td><%= pg.updated_at.hour %>:<%= pg.updated_at.min %>  -- <%= pg.updated_at.month %>/<%= pg.updated_at.day %>/<%= pg.updated_at.year %></td>
-  </tr>
-  <% } %>
 </table>
