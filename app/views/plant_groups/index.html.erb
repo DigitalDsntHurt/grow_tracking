@@ -29,7 +29,7 @@
         
         <td style="padding-right:12px"><%= plant_group.plant_group_updates.order(:created_at).last.update_type %></td>
         <td style="padding-right:12px">
-          <%= @update_types[@update_types.index(plant_group.plant_group_updates.order(:created_at).last.update_type) + 1] %>
+          <%= @update_types[@update_types.index(plant_group.plant_group_updates.order(:created_at).last.update_type)] %>
         </td>
         <td style="padding-right:12px"><%= plant_group.plant_group_updates.where(update_type: "transplant to veg")[0].pot_size unless plant_group.plant_group_updates.where(update_type: "transplant to veg")[0] == nil %></td>
         <td style="padding-right:12px"><%= plant_group.clone_date %></td>
