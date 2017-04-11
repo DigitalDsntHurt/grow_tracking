@@ -33,6 +33,7 @@
             <%= link_to 'Transplant to Flower', plant_group_updates_transplant_to_flower_path(:controller => "pg_updates", :action => "transplant_to_flower", :group => pg.id) %>
           </li>
           <li><%= link_to 'Flip', plant_group_updates_flip_path(:controller => "pg_updates", :action => "flip", :group => pg.id) %></li>
+          <li><%= link_to 'Modify Quantity', plant_group_updates_modify_quantity_path(:controller => "pg_updates", :action => "modify_quantity", :group => pg.id) %></li>
           <li>
             <%= link_to 'Harvest', pg %>
           </li>

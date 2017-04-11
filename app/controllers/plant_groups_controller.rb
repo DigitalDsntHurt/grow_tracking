@@ -6,7 +6,7 @@ class PlantGroupsController < ApplicationController
   def index
     @plant_groups = PlantGroup.all
     @rooms = Room.all
-    @update_types = ["clone","transplant to veg","transplant to flower","flip","harvest"]
+    @update_types = ["clone","transplant to veg","transplant to flower","flip","modify quantity","harvest"]
   end
 
   # GET /plant_groups/1

@@ -91,6 +91,11 @@ class PlantGroupUpdatesController < ApplicationController
     @new_plant_group_update = PlantGroupUpdate.new
   end
 
+  def modify_quantity
+    @plant_group = PlantGroup.find(params[:group])
+    @new_plant_group_update = PlantGroupUpdate.new
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_plant_group_update
